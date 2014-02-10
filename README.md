@@ -38,10 +38,14 @@ Run the migration
 
 Create the relevant image upload directories that you specify in your config, e.g.
 
-    public/uploads/packages/fbf/laravel-panels/image_1/original
-    public/uploads/packages/fbf/laravel-panels/image_1/resized
-    public/uploads/packages/fbf/laravel-panels/image_2/original
-    public/uploads/packages/fbf/laravel-panels/image_2/resized
+    public/uploads/packages/fbf/laravel-panels/homepage_carousel/image_1/original
+    public/uploads/packages/fbf/laravel-panels/homepage_carousel/image_1/resized
+    public/uploads/packages/fbf/laravel-panels/homepage_carousel/image_2/original
+    public/uploads/packages/fbf/laravel-panels/homepage_carousel/image_2/resized
+    public/uploads/packages/fbf/laravel-panels/homepage_accordion/image_1/original
+    public/uploads/packages/fbf/laravel-panels/homepage_accordion/image_1/resized
+    public/uploads/packages/fbf/laravel-panels/homepage_accordion/image_2/original
+    public/uploads/packages/fbf/laravel-panels/homepage_accordion/image_2/resized
 
 Optionally change the dimensions of the images you want to use in the config file
 
