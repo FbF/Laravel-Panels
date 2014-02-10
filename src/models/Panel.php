@@ -168,42 +168,42 @@ class Panel extends \Eloquent {
 	 * Returns a collection of Panel object for panels that are live, in the correct order, with the path, width and
 	 * height of the images set on each panel.
 	 *
-	 * @param $type
+	 * @param $panelType
 	 * @return mixed
 	 */
-	public static function getData($type)
+	public static function getData($panelType)
 	{
 		$panels = self::where('status','=',self::APPROVED)
 			->where('published_date','<=',\Carbon\Carbon::now())
-			->where('type', '=', $type)
+			->where('type', '=', $panelType)
 			->orderBy('order', 'asc')
 			->get();
 
-		if (self::getImageConfig('image_1', null, 'show'))
+		if (self::getImageConfig($panelType, 'image_1', null, 'show'))
 		{
-			$pathToImage1 = self::getImageConfig('image_1', 'resized', 'dir');
-			$image1Width = self::getImageConfig('image_1', 'resized', 'width');
-			$image1Height = self::getImageConfig('image_1', 'resized', 'height');
+			$pathToImage1 = self::getImageConfig($panelType, 'image_1', 'resized', 'dir');
+			$image1Width = self::getImageConfig($panelType, 'image_1', 'resized', 'width');
+			$image1Height = self::getImageConfig($panelType, 'image_1', 'resized', 'height');
 		}
 
-		if (self::getImageConfig('image_2', null, 'show'))
+		if (self::getImageConfig($panelType, 'image_2', null, 'show'))
 		{
-			$pathToImage2 = self::getImageConfig('image_2', 'resized', 'dir');
-			$image2Width = self::getImageConfig('image_2', 'resized', 'width');
-			$image2Height = self::getImageConfig('image_2', 'resized', 'height');
+			$pathToImage2 = self::getImageConfig($panelType, 'image_2', 'resized', 'dir');
+			$image2Width = self::getImageConfig($panelType, 'image_2', 'resized', 'width');
+			$image2Height = self::getImageConfig($panelType, 'image_2', 'resized', 'height');
 		}
 
-		if (self::getImageConfig('image_1', null, 'show') || self::getImageConfig('image_2', null, 'show'))
+		if (self::getImageConfig($panelType, 'image_1', null, 'show') || self::getImageConfig($panelType, 'image_2', null, 'show'))
 		{
 			foreach ($panels as $panel)
 			{
-				if (self::getImageConfig('image_1', null, 'show'))
+				if (self::getImageConfig($panelType, 'image_1', null, 'show'))
 				{
 					$panel->image_1_src = $pathToImage1 . $panel->image_1;
 					$panel->image_1_width = $image1Width;
 					$panel->image_1_height = $image1Height;
 				}
-				if (self::getImageConfig('image_2', null, 'show'))
+				if (self::getImageConfig($panelType, 'image_2', null, 'show'))
 				{
 					$panel->image_2_src = $pathToImage2 . $panel->image_2;
 					$panel->image_2_width = $image2Width;
