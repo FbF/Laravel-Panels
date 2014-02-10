@@ -16,7 +16,7 @@
 		</ul>
 	</div>
 
-	@if (Fbf\LaravelCarousel\Panel::getImageConfig('image_2', null, 'show'))
+	@if (Fbf\LaravelPanels\Panel::getImageConfig('HOMEPAGE_CAROUSEL', 'image_2', null, 'show'))
 	<ul class="carousel--nav">
 		@foreach ($panels as $panel)
 		<li class="carousel--nav--item{{ !empty($panel->css_class) ? ' carousel--nav--item__' . $panel->css_class : '' }}">

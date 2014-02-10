@@ -218,14 +218,16 @@ class Panel extends \Eloquent {
 	/**
 	 * Returns the config setting for an image
 	 *
-	 * @param $type
+	 * @param $panelType
+	 * @param $imageType
 	 * @param $size
 	 * @param $property
+	 * @internal param $type
 	 * @return mixed
 	 */
-	public static function getImageConfig($type, $size, $property)
+	public static function getImageConfig($panelType, $imageType, $size, $property)
 	{
-		$config = 'laravel-carousel::images.' . $type . '.';
+		$config = 'laravel-panels::types.'.$panelType.'.images.' . $imageType . '.';
 		if ($size == 'original')
 		{
 			$config .= 'original.';

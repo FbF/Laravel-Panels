@@ -32,6 +32,8 @@ Publish the config
 
     php artisan config:publish fbf/laravel-panels
 
+Before running the migration, ensure you set up the 'types' you need in your app, in the config file that's been published into your app's config folder.
+
 Run the migration
 
     php artisan migrate --package="fbf/laravel-panels"
@@ -47,7 +49,11 @@ Create the relevant image upload directories that you specify in your config, e.
     public/uploads/packages/fbf/laravel-panels/homepage_accordion/image_2/original
     public/uploads/packages/fbf/laravel-panels/homepage_accordion/image_2/resized
 
-Optionally change the dimensions of the images you want to use in the config file
+Optionally change the dimensions of the images you want to use in the config file.
+
+Optionally run the faker seed
+
+    php artisan db:seed --class=Fbf\LaravelPanels\PanelsTableFakeSeeder
 
 ## Usage
 
