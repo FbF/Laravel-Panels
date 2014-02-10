@@ -28,8 +28,8 @@ class PanelsTableFakeSeeder extends \Seeder {
 				$panel->type = $type;
 				$title = $faker->words(rand(2, 4), true);
 				$panel->title = $title;
-				$summary = $faker->sentence(rand(10, 20));
-				$panel->summary = $summary;
+				$description = $faker->sentence(rand(10, 20));
+				$panel->description = $description;
 				$panel->link_text = 'Read more &raquo;';
 				$panel->link_url = '#';
 				foreach (range(1,2) as $imageNum)
