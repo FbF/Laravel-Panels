@@ -7,6 +7,7 @@ A Laravel 4 package for adding multiple types of widgets like carousels, accordi
 
 * Supports concept of panels to be used in an accordion or a carousel or a set of tabs.
 * Each panel can have title, description, link URL, link text and up to 2 images. E.g. a background and an icon image.
+* You can define multiple types, or multiple instances of each type to be used on you site.
 * Bundled FrozenNode/Administrator config files to manage the panel data, including custom actions for reordering. One
 for an accordion and one for a carousel, but you could make your own
 * Bundled views that you can include as a partial for example on your site's homepage, and a model method for getting
