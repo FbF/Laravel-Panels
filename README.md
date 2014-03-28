@@ -26,7 +26,7 @@ Run
 
 Add the following to app/config/app.php
 
-    'Fbf\LaravelCarousel\LaravelPanelsServiceProvider'
+    'Fbf\LaravelPanels\LaravelPanelsServiceProvider'
 
 Publish the config
 
