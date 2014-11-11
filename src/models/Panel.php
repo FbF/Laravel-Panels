@@ -97,11 +97,9 @@ class Panel extends \Eloquent {
 			// Moves the current panel left one
 			$this->decrement('order');
 
-			$newOrder = $this->order - 1;
-
 			// Moves the panel that is now at the same 'order' as the panel we just moved, right one
 			self::where('type', '=', $this->type)
-				->where('order','=',$newOrder)
+				->where('order','=',$this->order)
 				->where('id','!=',$this->id)
 				->increment('order');
 
@@ -148,11 +146,9 @@ class Panel extends \Eloquent {
 			// Moves the current panel right one
 			$this->increment('order');
 
-			$newOrder = $this->order + 1;
-
 			// Moves the panel that is now at the same 'order' as the panel we just moved, right one
 			self::where('type', '=', $this->type)
-				->where('order','=',$newOrder)
+				->where('order','=',$this->order)
 				->where('id','!=',$this->id)
 				->decrement('order');
 
